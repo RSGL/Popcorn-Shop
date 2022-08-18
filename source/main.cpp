@@ -14,15 +14,14 @@ std::vector<RSGL::point> cords={{-45,290},{-55,300},{-25,50},{-25,20}};
 std::vector<std::vector<bool>> stops = {{false,true},{false,true},{false,true},{false,true}};
 std::vector<int> ticks = {0,0,0,0}; 
 
-
 int main(int args,char** argv){
     srand(time(NULL));
     while (running){
         win.checkEvents(); tick++;
         if (win.event.type==RSGL::quit) running=false;
-        if (!options && !gameover) RSGL::drawImage(images+"background.png",{0,0,481,351});
+        if (!options && !gameover) RSGL::drawImage("res/images/background.png",{0,0,481,351});
         RSGL::drawImage(images+"popcorn.png",{0,popy,487,655});
-        
+
         if (popy != 0 && stop2) popy+=20; else if (stop2) stop=true; 
         if (stop){ 
             if (stop2 & tick >= 40 ){ popy-=20;  stop2=false; tick=0; }

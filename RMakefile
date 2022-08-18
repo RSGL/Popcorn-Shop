@@ -1,9 +1,9 @@
 SOURCE += source/*.cpp
-LIBS += -lRSGL 
+LIBS += $(RSGL-static)
 ARGS += -g
-OUTPUT = PopcornShop
+OUTPUT = a.out
 GXX = g++
 
 pash{
-      ./$(OUTPUT)
+      ./a.out
 }
